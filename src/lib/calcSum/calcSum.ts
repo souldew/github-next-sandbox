@@ -1,0 +1,5 @@
+const calcSum = (a: number, b: number): number => {
+  return a + b;
+};
+
+export { calcSum };
