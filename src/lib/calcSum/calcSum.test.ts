@@ -9,7 +9,7 @@ describe("calcSum", () => {
 
   it("should return the sum of negative numbers", () => {
     const result = calcSum(-2, -3);
-    expect(result).toBe(999);
+    expect(result).toBe(-5);
   });
 
   it("should return the sum of a positive and a negative number", () => {
