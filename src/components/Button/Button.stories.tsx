@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Button> = {
   title: "UI/Button",
@@ -23,10 +24,14 @@ const meta: Meta<typeof Button> = {
       description: "Button text",
     },
   },
-};
-
-const onClick = () => {
-  window.alert("Clicked!");
+  args: {
+    onClick: fn(),
+  },
+  decorators: [
+    (story) => (
+      <div style={{ padding: "3em", backgroundColor: "red" }}>{story()}</div>
+    ),
+  ],
 };
 
 export default meta;
@@ -35,14 +40,19 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "primary",
-    onClick: onClick,
     children: "Click me!",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: "3em", backgroundColor: "blue" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    onClick: onClick,
     children: "Click me!",
   },
 };
