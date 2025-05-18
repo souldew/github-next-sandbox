@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { SampleComponent } from "../SampleComponent";
 import { Button } from "./Button";
 
-const meta: Meta<typeof SampleComponent> = {
+const meta: Meta<typeof Button> = {
   title: "UI/Button",
   component: Button,
   tags: ["autodocs"],
