@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 自動生成のstoryは除外
+# storybook
+src/stories/**
+*storybook.log
