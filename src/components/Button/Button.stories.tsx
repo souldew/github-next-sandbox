@@ -23,6 +23,11 @@ const meta: Meta<typeof Button> = {
       description: "Button text",
     },
   },
+  decorators: [
+    (story) => (
+      <div style={{ padding: "3em", backgroundColor: "red" }}>{story()}</div>
+    ),
+  ],
 };
 
 const onClick = () => {
@@ -38,6 +43,13 @@ export const Primary: Story = {
     onClick: onClick,
     children: "Click me!",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: "3em", backgroundColor: "blue" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 export const Secondary: Story = {
   args: {
