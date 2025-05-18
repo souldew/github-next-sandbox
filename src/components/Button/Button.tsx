@@ -1,4 +1,4 @@
-import cslx from "clsx";
+import clsx from "clsx";
 import styles from "./Button.module.scss";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Button = ({ variant = "primary", onClick, children }: Props) => {
-  const className = cslx(styles.button, {
+  const className = clsx(styles.button, {
     [styles.primary]: variant === "primary",
     [styles.secondary]: variant === "secondary",
   });
